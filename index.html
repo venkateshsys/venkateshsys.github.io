@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="tax.png" type="image/png">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tax Calculator</h1>
+      <div class="regime-container">
+
+        <div class="regime-section">
+          <div class="form-group">
+            <label for="income">Total Income:</label>
+            <input
+              type="number"
+              id="income"
+              placeholder="Enter your total income"
+              value="0"
+            />
+          </div>
+          <div class="form-group">
+            <label for="standardDeduction">Standard Deduction:</label>
+            <input
+              type="number"
+              id="standardDeduction"
+              value="50000"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="medicalInsurance">Medical Insurance Premium:</label>
+            <input type="number" id="medicalInsurance" value="0" />
+          </div>
+          <div class="form-group">
+            <label for="hra">HRA:</label>
+            <input type="number" id="hra" value="0" />
+          </div>
+          <div class="form-group">
+            <label for="eightyC">80C Deductions:</label>
+            <div class="input-group">
+              <input type="number" id="eightyC" value="0" />
+              <span class="clickable-text" onclick="setMax80C()">Set Max</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="eightyD">80D Deductions:</label>
+            <div class="input-group">
+              <input type="number" id="eightyD" value="0" />
+              <span class="clickable-text" onclick="setMax80D()">Set Max</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="eightyE">80E Deductions:</label>
+            <input type="number" id="eightyE" value="0" />
+          </div>
+          <div class="form-group">
+            <label for="twentyFourB">24b Deductions:</label>
+            <div class="input-group">
+              <input type="number" id="twentyFourB" value="0" />
+              <span class="clickable-text" onclick="setMax24b()">Set Max</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="eightyEEA">80EEA Deductions:</label>
+            <input type="number" id="eightyEEA" value="0" />
+          </div>
+          <div class="form-group">
+            <label for="eightyCCD">80CCD Deductions:</label>
+            <div class="input-group">
+              <input type="number" id="eightyCCD" value="0" />
+              <span class="clickable-text" onclick="setMax80CCD()">Set Max</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fbpPlan">FBP Plan Deductions:</label>
+            <input type="number" id="fbpPlan" value="0" />
+          </div>
+          <div class="form-group">
+            <label for="additional">Additional Deductions: (if any)</label>
+            <input type="number" id="additional" value="0" />
+          </div>
+          <button onclick="calculateTaxComparison()">
+            Calculate Tax Comparison
+          </button>
+        </div>
+
+        <div class="regime-container" id="show">
+          <div class="regime-section">
+            <h2>Old Regime</h2>
+            <div class="results-row">
+              <div id="resultsOldRegimeWithoutFbp" class="result">
+              </div>
+              <div id="resultsOldRegimeWithFbp" class="result">
+              </div>
+            </div>
+          </div>
+          <div class="regime-section">
+            <h2>New Regime</h2>
+            <div class="results-row">
+              <div id="resultsNewRegimeWithoutFbp" class="result">
+              </div>
+              <div id="resultsNewRegimeWithFbp" class="result">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

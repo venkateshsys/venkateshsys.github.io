@@ -1,0 +1,250 @@
+/* General styling for the entire page */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+/* Container adjustments */
+.container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  padding-bottom: 20px;
+}
+
+/* Flexbox setup for regime sections */
+.regime-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.regime-section {
+  flex: 1;
+  margin: 0 10px;
+}
+
+/* Input and button styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+input[type="number"], button {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #367C2B;
+}
+
+/* Results layout adjustments */
+.results-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.result, .difference {
+  flex: 1 1 48%;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-right: 4%;
+}
+
+.result:last-child, .difference {
+  margin-right: 0;
+}
+
+.difference {
+  background: #e9ecef;
+  margin-top: 20px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  margin-right: 10px; /* Add space between input and clickable text */
+  width: 90%; /* Set input width to 75% */
+}
+
+.clickable-text {
+  width: 10%; /* Set clickable text width to 25% */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  color: blue; /* Change text color to blue */
+  text-decoration: underline; /* Underline the text */
+  text-align: center; /* Center the text */
+  line-height: 1.5; /* Adjust line height */
+}
+
+.animated-green {
+  display: inline-block;
+  color: green;
+  animation: colorChangeGreen 2s infinite alternate, scaleUp 2s infinite alternate, shadowPulseGreen 2s infinite alternate;
+}
+
+.animated-red {
+  display: inline-block;
+  color: red;
+  animation: colorChangeRed 2s infinite alternate, scaleUp 2s infinite alternate, shadowPulseRed 2s infinite alternate;
+}
+
+.animated-blue {
+  display: inline-block;
+  color: blue;
+  animation: colorChangeBlue 2s infinite alternate, scaleUp 2s infinite alternate, shadowPulseBlue 2s infinite alternate;
+}
+
+@keyframes colorChangeGreen {
+  0% {
+      color: green;
+  }
+  50% {
+      color: limegreen;
+  }
+  100% {
+      color: green;
+  }
+}
+
+@keyframes colorChangeRed {
+  0% {
+      color: red;
+  }
+  50% {
+      color: darkred;
+  }
+  100% {
+      color: red;
+  }
+}
+
+@keyframes colorChangeBlue {
+  0% {
+      color: blue;
+  }
+  50% {
+      color: darkblue;
+  }
+  100% {
+      color: blue;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes shadowPulseGreen {
+  0% {
+      text-shadow: 0 0 5px green;
+  }
+  50% {
+      text-shadow: 0 0 15px limegreen;
+  }
+  100% {
+      text-shadow: 0 0 5px green;
+  }
+}
+
+@keyframes shadowPulseRed {
+  0% {
+      text-shadow: 0 0 5px red;
+  }
+  50% {
+      text-shadow: 0 0 15px darkred;
+  }
+  100% {
+      text-shadow: 0 0 5px red;
+  }
+}
+
+@keyframes shadowPulseBlue {
+  0% {
+      text-shadow: 0 0 5px blue;
+  }
+  50% {
+      text-shadow: 0 0 15px darkblue;
+  }
+  100% {
+      text-shadow: 0 0 5px blue;
+  }
+}
+
+
+
+.dropdown {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-arrow {
+  width: 0; 
+  height: 0; 
+  margin-left: 10px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: none;
+  margin-top: 1px;
+}
+
+li {
+  padding: 2px 0;
+  /* border-bottom: 1px solid #e9ecef; */
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.li-title {
+  font-weight: bold;
+}
